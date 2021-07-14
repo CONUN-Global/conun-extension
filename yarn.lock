@@ -2260,15 +2260,6 @@
     react-refresh "^0.9.0"
     semver "^5.4.1"
 
-"@parcel/transformer-sass@2.0.0-beta.3.1":
-  version "2.0.0-beta.3.1"
-  resolved "https://registry.yarnpkg.com/@parcel/transformer-sass/-/transformer-sass-2.0.0-beta.3.1.tgz#f0fd28b84c6e1f0217928e170d7776c68b367e9b"
-  integrity sha512-4GvCK39ys/qkdslIzg/OC+n3R7fdFyFRmMrtRZ9rkrMaibK+/Kw0BvuSFJ2++zveanrQBZyfb7l4jmuER4qqIQ==
-  dependencies:
-    "@parcel/plugin" "2.0.0-beta.3.1"
-    "@parcel/source-map" "2.0.0-rc.1.0"
-    sass "^1.32.4"
-
 "@parcel/transformer-sass@2.0.0-nightly.529+f343ebaa":
   version "2.0.0-nightly.529"
   resolved "https://registry.yarnpkg.com/@parcel/transformer-sass/-/transformer-sass-2.0.0-nightly.529.tgz#9277650dd6aed811e40c94a9b8ae612f3ca2f3e1"
@@ -2278,6 +2269,15 @@
     "@parcel/plugin" "2.0.0-nightly.529+f343ebaa"
     "@parcel/source-map" "2.0.0-alpha.4.19"
     "@parcel/utils" "2.0.0-nightly.529+f343ebaa"
+
+"@parcel/transformer-sass@2.0.0-nightly.771":
+  version "2.0.0-nightly.771"
+  resolved "https://registry.yarnpkg.com/@parcel/transformer-sass/-/transformer-sass-2.0.0-nightly.771.tgz#f6dc51cd9a071bfa071dc061474b3b0412d6a91d"
+  integrity sha512-lhM0iR8HKPqcWSyCpN2ufoj3NshZZBsr4Po/ZXOUhCna3zb4/d7xtW+r13UXXIlV1SsjPcIQ6b4TAt0bZ1o+Lg==
+  dependencies:
+    "@parcel/plugin" "2.0.0-nightly.771+b549b1d2"
+    "@parcel/source-map" "2.0.0-rc.5"
+    sass "^1.32.4"
 
 "@parcel/transformer-stylus@2.0.0-nightly.529+f343ebaa":
   version "2.0.0-nightly.529"
