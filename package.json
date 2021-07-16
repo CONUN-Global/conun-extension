@@ -13,7 +13,7 @@
     "webext-prod": {}
   },
   "scripts": {
-    "dev": "parcel serve ./src/index.html --dist-dir dist",
+    "dev": "parcel serve ./src/index.html --dist-dir dist --port 3000",
     "build": "parcel build ./src/index.html --dist-dir build",
     "prepare": "husky install",
     "pre-commit": "lint-staged"
@@ -44,7 +44,9 @@
   },
   "dependencies": {
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "react-google-login": "^5.2.2",
+    "react-kakao-login": "^2.1.0"
   },
   "lint-staged": {
     "*.{json,md}": [
