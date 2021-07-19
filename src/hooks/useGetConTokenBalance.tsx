@@ -4,20 +4,12 @@ import useAppCurrentUser from "./useAppCurrentUser";
 
 import instance from "../axios/instance";
 
-import {
-  FcnTypes,
-  ORG_NAME,
-  SMART_CONTRACT_DEV,
-  SMART_CONTRACT_PROD,
-} from "../const";
+import { FcnTypes, ORG_NAME } from "../const";
 
 function useGetConTokenBalance() {
   const { currentUser } = useAppCurrentUser();
 
-  const SMART_CONTRACT =
-    process.env.NODE_ENV === "development"
-      ? SMART_CONTRACT_DEV
-      : SMART_CONTRACT_PROD;
+  const SMART_CONTRACT = "conos";
 
   const { data, isLoading, refetch, isFetching } = useQuery(
     "balance",
