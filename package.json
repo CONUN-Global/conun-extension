@@ -3,14 +3,9 @@
   "version": "1.0.0",
   "license": "MIT",
   "private": false,
-  "targets": {
-    "webext-dev": {
-      "sourceMap": {
-        "inline": true,
-        "inlineSources": true
-      }
-    },
-    "webext-prod": {}
+  "sourceMap": {
+    "inline": true,
+    "inlineSources": true
   },
   "scripts": {
     "dev": "parcel serve ./src/index.html --dist-dir dist",
