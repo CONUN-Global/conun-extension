@@ -17,8 +17,10 @@
     "@parcel/config-webextension": "^2.0.0-nightly.2151",
     "@parcel/transformer-sass": "2.0.0-beta.3.1",
     "@parcel/transformer-typescript-tsc": "^2.0.0-nightly.771",
+    "@types/chrome": "^0.0.147",
     "@types/react": "^17.0.14",
     "@types/react-dom": "^17.0.9",
+    "@types/react-router-dom": "^5.1.8",
     "@typescript-eslint/eslint-plugin": "^4.28.3",
     "@typescript-eslint/parser": "^4.28.3",
     "eslint": "^7.30.0",
@@ -38,8 +40,16 @@
     "typescript-plugin-css-modules": "^3.4.0"
   },
   "dependencies": {
+    "axios": "^0.21.1",
+    "classnames": "^2.3.1",
+    "framer-motion": "^4.1.17",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "react-dropzone": "^11.3.4",
+    "react-query": "^3.19.0",
+    "react-router-dom": "^5.2.0",
+    "react-toastify": "^7.0.4",
+    "zustand": "^3.5.7"
   },
   "lint-staged": {
     "*.{json,md}": [

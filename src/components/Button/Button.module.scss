@@ -1,0 +1,43 @@
+.Button {
+  border: none;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  padding: 10px;
+  width: 100%;
+
+  &:focus {
+    outline: none;
+  }
+
+  &.primary {
+    background-color: var(--primary-color);
+    color: var(--primary-color-font);
+  }
+
+  &.secondary {
+    background-color: var(--secondary-color);
+    color: var(--secondary-color-font);
+  }
+
+  &.round {
+    border-radius: 20px;
+  }
+
+  &:disabled {
+    background: #e9ebef;
+    box-shadow: none;
+    color: #ffff;
+    cursor: not-allowed;
+  }
+}
+
+.NoStyleButton {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.Spinner {
+  font-size: 8px;
+}
