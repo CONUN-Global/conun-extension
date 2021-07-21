@@ -58,7 +58,7 @@ function RecentTransactions() {
                   <Conun className={styles.Icon} />
                 )}
                 <span className={styles.Amount}>
-                  {tx.amount} {tx.token}
+                  {tx?.amount} {tx?.token}
                 </span>
                 <span className={styles.Date}>
                   {formatDistance(new Date(tx.date), new Date(), {

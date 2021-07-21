@@ -1,0 +1,51 @@
+.Amount {
+  font-size: 30px;
+  margin-right: 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.TokenName {
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.Content {
+  align-items: center;
+  height: 250px;
+  justify-content: space-around;
+}
+
+.ConfirmModal {
+  width: 90%;
+
+  & .Title {
+    font-size: 20px;
+  }
+
+  & .AmountContainer {
+    align-items: center;
+    display: flex;
+  }
+
+  & .FeeContainer {
+    align-items: center;
+    display: flex;
+
+    & .Amount {
+      font-size: 16px;
+    }
+  }
+
+  & .To {
+    font-size: 12px;
+  }
+}
+
+.Logo {
+  fill: var(--primary-color);
+  height: 28px;
+  margin-right: 9px;
+  transform: translateY(3px);
+}

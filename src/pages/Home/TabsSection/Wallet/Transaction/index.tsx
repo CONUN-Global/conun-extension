@@ -2,16 +2,16 @@ import React, { useEffect, useState } from "react";
 import classNames from "classnames";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
 
-import FormInput from "../../../../components/Form/HookForm/FormInput";
-import Input from "../../../../components/Form/Input";
-import Switch from "../../../../components/Switch";
-import Button from "../../../../components/Button";
-import ConfirmPasswordModal from "../../../../components/ConfirmPasswordModal";
+import FormInput from "../../../../../components/Form/HookForm/FormInput";
+import Input from "../../../../../components/Form/Input";
+import Switch from "../../../../../components/Switch";
+import Button from "../../../../../components/Button";
 
-import useCurrentToken from "../../../../hooks/useCurrentToken";
-import useTransferFee from "../../../../hooks/useTransferFee";
+import useCurrentToken from "../../../../../hooks/useCurrentToken";
+import useTransferFee from "../../../../../hooks/useTransferFee";
 
 import styles from "./Transaction.module.scss";
+import ConfirmModal from "../ConfirmModal";
 
 const speeds = [
   { id: "slow", label: "Slow", default: "0.000059" },
@@ -19,7 +19,7 @@ const speeds = [
   { id: "fast", label: "Fast", default: "0.000073" },
 ];
 
-type FormData = {
+interface FormData {
   type: string;
   amount: number;
   to: string;
@@ -27,11 +27,15 @@ type FormData = {
   gasPrice: number;
   gasLimit: number;
   isAdvanced: boolean;
-};
+}
+
+export interface Transaction extends FormData {
+  token: string;
+}
 
 function Transaction() {
-  const [isConfirmPasswordModalOpen, setIsConfirmPasswordModalOpen] =
-    useState(false);
+  const [currentTransaction, setCurrentTransaction] =
+    useState<Transaction | null>(null);
 
   const token = useCurrentToken();
 
@@ -83,17 +87,13 @@ function Transaction() {
       ? +values.gasPrice
       : data?.payload?.[values?.fee]?.gas_price;
 
-    console.log(`fee`, fee);
-    console.log(`gasLimit`, gasLimit);
-    console.log(`gasPrice`, gasPrice);
-
-    // api.openTransferWindow({
-    //   ...values,
-    //   fee,
-    //   gasLimit,
-    //   gasPrice,
-    //   token: token.token,
-    // });
+    setCurrentTransaction({
+      ...values,
+      fee,
+      gasLimit,
+      gasPrice,
+      token: token.token,
+    });
   };
 
   const hasFee = token.token !== "conx";
@@ -241,13 +241,14 @@ function Transaction() {
           round
           variant="secondary"
         >
-          Next
+          Send
         </Button>
       </form>
-      <ConfirmPasswordModal
-        isOpen={isConfirmPasswordModalOpen}
-        onClose={() => setIsConfirmPasswordModalOpen(false)}
-        onSuccess={handleSubmit(onSubmit)}
+      <ConfirmModal
+        isOpen={!!currentTransaction}
+        onClose={() => setCurrentTransaction(null)}
+        onSuccess={() => null}
+        transaction={currentTransaction}
       />
     </>
   );
