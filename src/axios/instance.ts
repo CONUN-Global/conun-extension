@@ -1,4 +1,5 @@
 import axios from "axios";
+import getAuthHeader from "../helpers/getAuthHeader";
 
 const instance = axios.create({
   baseURL: process.env.SERVER_URL,
@@ -6,8 +7,8 @@ const instance = axios.create({
 });
 
 instance.interceptors.request.use(
-  (config) => {
-    const token = "";
+  async (config) => {
+    const token = await getAuthHeader();
 
     if (token) {
       config.headers["x-auth-token"] = token;

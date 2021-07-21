@@ -1,0 +1,14 @@
+.Layout {
+  background: #f8f8f9;
+  display: flex;
+  height: calc(100vh - 33px);
+  justify-content: center;
+  width: 100vw;
+}
+
+.SpinnerContainer {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+}

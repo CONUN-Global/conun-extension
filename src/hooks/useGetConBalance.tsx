@@ -15,7 +15,7 @@ function useGetConBalance() {
       return data;
     },
     {
-      enabled: !!currentUser.walletAddress,
+      enabled: !!currentUser?.walletAddress,
       cacheTime: 0,
       refetchOnMount: true,
       refetchOnWindowFocus: true,

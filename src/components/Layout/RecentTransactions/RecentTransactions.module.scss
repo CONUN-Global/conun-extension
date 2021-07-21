@@ -1,0 +1,75 @@
+.RecentTransactions {
+  background-color: #ffff;
+  border-radius: 12px 12px 0 0;
+  bottom: 0;
+  padding-top: 15px;
+  position: absolute;
+  width: 100vw;
+  z-index: 1000;
+
+  & * {
+    color: var(--primary-color);
+  }
+
+  & .Title {
+    font-size: 12px;
+    font-weight: bolder;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  & .Transactions {
+    display: flex;
+    flex-direction: column;
+
+    & .Transaction {
+      align-items: center;
+      border-top: 1px solid var(--bg-secondary);
+      display: flex;
+      height: 57px;
+      justify-content: space-between;
+      padding: 0 36px;
+
+      & > * {
+        font-size: 11px;
+      }
+
+      & .Icon {
+        height: 22px;
+        width: 22px;
+      }
+
+      & .Amount {
+        text-align: center;
+        text-transform: uppercase;
+        width: 60px;
+      }
+
+      & .Date {
+        text-align: center;
+        width: 110px;
+      }
+
+      & .ActionIcon {
+        fill: var(--primary-color);
+        width: 15px;
+      }
+
+      & .TransactionLink {
+        overflow: hidden;
+        text-align: center;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        & .ActionIcon {
+          fill: var(--primary-color);
+          width: 15px;
+        }
+      }
+
+      & .NoTransactions {
+        margin: 0 auto;
+      }
+    }
+  }
+}

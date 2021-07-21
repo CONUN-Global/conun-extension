@@ -66,7 +66,7 @@ function ConunLogin() {
   };
 
   return (
-    <>
+    <div className={styles.Container}>
       <div className={styles.UserBox}>
         <img
           src={currentUser?.picture}
@@ -111,7 +111,7 @@ function ConunLogin() {
       <Button type="button" noStyle className={styles.LogoutButton}>
         Not you? Login with a different account.
       </Button>
-    </>
+    </div>
   );
 }
 

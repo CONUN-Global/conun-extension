@@ -9,16 +9,18 @@ import { FcnTypes, ORG_NAME } from "../const";
 function useGetConTokenBalance() {
   const { currentUser } = useAppCurrentUser();
 
+  const SMART_CONTRACT = "conos";
+
   const { data, isLoading, refetch, isFetching } = useQuery(
     "balance",
     async () => {
       const { data } = await instance.get(
-        `/con-token/channels/mychannel/chaincodes/${process.env.SMART_CONTRACT}?walletAddress=${currentUser?.walletAddress}&orgName=${ORG_NAME}&fcn=${FcnTypes.BalanceOf}`
+        `/con-token/channels/mychannel/chaincodes/${SMART_CONTRACT}?walletAddress=${currentUser?.walletAddress}&orgName=${ORG_NAME}&fcn=${FcnTypes.BalanceOf}`
       );
       return data;
     },
     {
-      enabled: !!currentUser.walletAddress,
+      enabled: !!currentUser?.walletAddress,
       cacheTime: 0,
       refetchOnMount: true,
       refetchOnWindowFocus: true,

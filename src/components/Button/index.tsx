@@ -2,7 +2,7 @@ import React from "react";
 import { HTMLMotionProps, motion } from "framer-motion";
 import classNames from "classnames";
 
-// import Spinner from "../Spinner";
+import Spinner from "../Spinner";
 
 import styles from "./Button.module.scss";
 
@@ -43,7 +43,7 @@ function Button({
       })}
       {...props}
     >
-      {loading ? "l;oading..." : children}
+      {loading ? <Spinner className={styles.Spinner} /> : children}
     </motion.button>
   );
 }
