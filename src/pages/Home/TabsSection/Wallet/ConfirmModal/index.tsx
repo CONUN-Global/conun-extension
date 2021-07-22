@@ -8,7 +8,7 @@ import Ethereum from "../../../../../assets/icons/ethereum.svg";
 
 import { Transaction } from "../Transaction";
 
-import styles from "./ConfirmModal.module.scss";
+import * as styles from "./ConfirmModal.module.scss";
 
 const ETH = "eth";
 

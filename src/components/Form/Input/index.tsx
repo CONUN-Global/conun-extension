@@ -1,7 +1,7 @@
 import React, { InputHTMLAttributes } from "react";
 import classNames from "classnames";
 
-import styles from "./Input.module.scss";
+import * as styles from "./Input.module.scss";
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   label?: string;

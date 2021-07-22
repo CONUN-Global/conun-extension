@@ -9,7 +9,7 @@ import useCurrentUser from "../../hooks/useCurrentUser";
 import useAppCurrentUser from "../../hooks/useAppCurrentUser";
 import useStore from "../../store/store";
 
-import styles from "./Layout.module.scss";
+import * as styles from "./Layout.module.scss";
 
 interface LayoutProps {
   children: React.ReactNode;

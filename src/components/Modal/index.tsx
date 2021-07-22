@@ -4,7 +4,7 @@ import classNames from "classnames";
 
 import IconClose from "../../assets/icons/close.svg";
 
-import styles from "./Modal.module.scss";
+import * as styles from "./Modal.module.scss";
 
 LModal.setAppElement("#app");
 

@@ -6,7 +6,7 @@ import FormInput from "../Form/HookForm/FormInput";
 
 import Modal from "../Modal";
 
-import styles from "./ConfirmPasswordModal.module.scss";
+import * as styles from "./ConfirmPasswordModal.module.scss";
 
 interface ConfirmPasswordModal {
   isOpen: boolean;

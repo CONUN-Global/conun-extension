@@ -12,7 +12,7 @@ import Conun from "../../../assets/icons/conun.svg";
 import Copy from "../../../assets/icons/copy.svg";
 import Link from "../../../assets/icons/link.svg";
 
-import styles from "./RecentTransactions.module.scss";
+import * as styles from "./RecentTransactions.module.scss";
 
 import useStore from "../../../store/store";
 

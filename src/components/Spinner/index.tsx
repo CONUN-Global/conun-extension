@@ -1,7 +1,7 @@
 import React from "react";
 import classNames from "classnames";
 
-import styles from "./Spinner.module.scss";
+import * as styles from "./Spinner.module.scss";
 
 interface SpinnerProps {
   className?: any;

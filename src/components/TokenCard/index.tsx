@@ -11,7 +11,7 @@ import Conun from "../../assets/icons/conun-white.svg";
 import Ethereum from "../../assets/icons/ethereum.svg";
 import RefreshIcon from "../../assets/icons/refresh.svg";
 
-import styles from "./TokenCard.module.scss";
+import * as styles from "./TokenCard.module.scss";
 
 interface TokenCardProps {
   token: {

@@ -12,7 +12,7 @@ import useLogin from "../../hooks/useLogin";
 import instance from "../../axios/instance";
 import { ORG_NAME, WALLET_TYPE } from "../../const";
 
-import styles from "./ConunLogin.module.scss";
+import * as styles from "./ConunLogin.module.scss";
 
 function ConunLogin() {
   const [idFile, setIdFile] = useState(null);

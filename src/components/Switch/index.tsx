@@ -2,7 +2,7 @@ import React from "react";
 import classNames from "classnames";
 import { default as ReactSwitch } from "react-switch";
 
-import styles from "./Switch.module.scss";
+import * as styles from "./Switch.module.scss";
 
 interface SwitchProps {
   id: string;

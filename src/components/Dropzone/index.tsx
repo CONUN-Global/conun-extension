@@ -2,7 +2,7 @@ import React from "react";
 import classNames from "classnames";
 import { useDropzone } from "react-dropzone";
 
-import styles from "./Dropzone.module.scss";
+import * as styles from "./Dropzone.module.scss";
 
 interface DropzoneProps {
   onDrop: (file: any) => void;

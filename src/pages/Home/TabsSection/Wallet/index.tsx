@@ -4,7 +4,7 @@ import classNames from "classnames";
 import Swap from "./Swap";
 import Transaction from "./Transaction";
 
-import styles from "./Wallet.module.scss";
+import * as styles from "./Wallet.module.scss";
 import Button from "../../../../components/Button";
 
 const actions: any = {

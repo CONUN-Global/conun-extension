@@ -11,7 +11,7 @@ import { TOKEN_CARDS } from "../../const";
 
 import DotIcon from "../../assets/icons/dot.svg";
 
-import styles from "./Home.module.scss";
+import * as styles from "./Home.module.scss";
 
 import "pure-react-carousel/dist/react-carousel.es.css";
 

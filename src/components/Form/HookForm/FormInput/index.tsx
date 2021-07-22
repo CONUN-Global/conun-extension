@@ -2,7 +2,7 @@ import React, { InputHTMLAttributes } from "react";
 import classNames from "classnames";
 import { FieldError } from "react-hook-form";
 
-import styles from "./FormInput.module.scss";
+import * as styles from "./FormInput.module.scss";
 
 import inputStyles from "../../Input/Input.module.scss";
 

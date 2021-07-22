@@ -10,7 +10,7 @@ import Button from "../../../../../components/Button";
 import useCurrentToken from "../../../../../hooks/useCurrentToken";
 import useTransferFee from "../../../../../hooks/useTransferFee";
 
-import styles from "./Transaction.module.scss";
+import * as styles from "./Transaction.module.scss";
 import ConfirmModal from "../ConfirmModal";
 
 const speeds = [

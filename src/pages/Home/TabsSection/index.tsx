@@ -3,7 +3,7 @@ import classNames from "classnames";
 
 import Wallet from "./Wallet";
 
-import styles from "./TabsSection.module.scss";
+import * as styles from "./TabsSection.module.scss";
 
 function TabsSection() {
   return (

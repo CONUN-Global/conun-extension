@@ -8,7 +8,7 @@ import useStore from "../../../store/store";
 
 import ConunLogo from "../../../assets/icons/conun-logo-big.svg";
 
-import styles from "./SettingsSidebar.module.scss";
+import * as styles from "./SettingsSidebar.module.scss";
 
 const tabs = [
   {

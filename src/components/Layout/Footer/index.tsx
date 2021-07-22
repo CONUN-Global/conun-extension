@@ -7,7 +7,7 @@ import useStore from "../../../store/store";
 
 import History from "../../../assets/icons/history.svg";
 
-import styles from "./Footer.module.scss";
+import * as styles from "./Footer.module.scss";
 
 function Footer() {
   const isAuthenticated = useStore((state) => state.isAuthenticated);

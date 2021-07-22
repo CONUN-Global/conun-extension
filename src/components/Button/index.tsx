@@ -4,7 +4,7 @@ import classNames from "classnames";
 
 import Spinner from "../Spinner";
 
-import styles from "./Button.module.scss";
+import * as styles from "./Button.module.scss";
 
 interface ButtonProps extends HTMLMotionProps<"button"> {
   children: React.ReactNode;
