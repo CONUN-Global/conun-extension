@@ -11,7 +11,7 @@ function useLogin() {
   const setIsAuthenticated = useStore((state) => state.setIsAuthenticated);
   const history = useHistory();
   const { mutateAsync: login, isLoading } = useMutation(
-    async (loginData) => {
+    async (loginData: { password: string; email: string }) => {
       const { data } = await instance.post("/auth", loginData);
       return data;
     },
