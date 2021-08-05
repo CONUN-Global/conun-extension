@@ -1,0 +1,66 @@
+.Container {
+  display: flex;
+  flex-direction: column;
+  padding: 25px 50px;
+  position: relative;
+  width: 100%;
+}
+
+.UserBox {
+  align-items: center;
+  display: flex;
+  margin-top: 58px;
+  transform: translateX(-13px);
+
+  & .ProfilePicture {
+    border-radius: 50%;
+    height: 35px;
+    margin: 10px;
+    width: 35px;
+  }
+
+  & .InfoBox {
+    display: flex;
+    flex-direction: column;
+    font-size: 10px;
+
+    & .Name {
+      color: var(--primary-color);
+    }
+  }
+}
+
+.Title {
+  color: var(--primary-color);
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 15px;
+  margin-top: 45px;
+}
+
+.Subtitle {
+  color: var(--primary-color);
+  font-size: 12px;
+  margin-bottom: 90px;
+  margin-right: 35px;
+}
+
+.Dropzone {
+  margin-bottom: 14px;
+}
+
+.PasswordInput {
+  margin-bottom: 40px;
+}
+
+.ActivateButton {
+  margin-bottom: 10px;
+}
+
+.LogoutButton {
+  font-size: 12px;
+
+  & > span {
+    color: var(--primary-color);
+  }
+}

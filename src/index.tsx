@@ -1,12 +1,17 @@
 import React from "react";
 import ReactDom from "react-dom";
+import { QueryClientProvider } from "react-query";
+import { HashRouter as Router } from "react-router-dom";
 
-function App() {
-  return (
-    <div>
-      <h1>Hola</h1>
-    </div>
-  );
-}
+import App from "./App";
 
-ReactDom.render(<App />, document.getElementById("app"));
+import { queryClient } from "./react-query";
+
+ReactDom.render(
+  <QueryClientProvider client={queryClient}>
+    <Router>
+      <App />
+    </Router>
+  </QueryClientProvider>,
+  document.getElementById("app")
+);

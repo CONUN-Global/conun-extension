@@ -1,0 +1,30 @@
+.Container {
+  align-items: center;
+  background: #fff;
+  border: 2px dashed #bababa;
+  border-radius: 4px;
+  color: #bababa;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  max-width: 314px;
+  padding: 12px;
+
+  &:focus {
+    outline: none;
+  }
+
+  & .Label {
+    color: #bababa;
+    font-size: 12px;
+    text-align: center;
+    width: 100%;
+  }
+
+  &.hasFile {
+    border: 1px solid #184186;
+    & .Label {
+      color: #184186;
+    }
+  }
+}

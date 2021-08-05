@@ -1,0 +1,51 @@
+.Carousel {
+  width: 100%;
+}
+
+.Home {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  & .DotGroup {
+    display: flex;
+    margin-top: -12px;
+
+    & :not(:last-child) {
+      margin-right: 2px;
+    }
+
+    & .Dot {
+      background: transparent;
+      border: none;
+      fill: #e9ebef;
+
+      &:focus {
+        outline: none;
+      }
+
+      &.active {
+        fill: var(--primary-color);
+      }
+
+      & .DotIcon {
+        height: 6px;
+        width: 6px;
+      }
+    }
+  }
+}
+
+.Menu {
+  fill: var(--primary-color);
+  height: 18px;
+  margin-right: 15px;
+  width: 18px;
+}
+
+.CardsContainer {
+  margin-top: 15px;
+  max-height: 227px;
+  width: 100%;
+}

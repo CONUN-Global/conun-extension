@@ -1,0 +1,96 @@
+.CardContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.Card {
+  background-blend-mode: color;
+  border-radius: 15px;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 209px;
+  justify-content: space-around;
+  mix-blend-mode: normal;
+  position: relative;
+  width: 351px;
+  width: 90%;
+
+  & * {
+    color: #fff;
+  }
+
+  & > * {
+    margin: 0 30px;
+  }
+
+  &.con {
+    background: linear-gradient(244.5deg, #2b81e6 12.9%, #22b4d5 85.63%);
+  }
+
+  &.eth {
+    background: linear-gradient(244.5deg, #223548 12.9%, #4d6987 85.63%);
+  }
+
+  &.conx {
+    background: linear-gradient(244.5deg, #c95f72 12.9%, #792721 85.63%);
+  }
+
+  & .Header {
+    display: flex;
+    justify-content: space-between;
+
+    & .Network {
+      font-size: 14px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    & .RefreshButton {
+      & .RefreshIcon {
+        fill: #fff;
+        width: 15px;
+      }
+    }
+  }
+
+  & .BalanceContainer {
+    align-items: center;
+    display: flex;
+
+    & .Balance {
+      font-size: 30px;
+      margin-right: 8px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      & .ConunLogoBalance {
+        fill: #fff;
+        height: 28px;
+        margin-right: 9px;
+        transform: translateY(3px);
+      }
+    }
+
+    & .TokenName {
+      text-transform: uppercase;
+    }
+  }
+
+  & .WalletAddressContainer {
+    & .WalletAddress {
+      font-size: 13px;
+    }
+
+    & .WalletLabel {
+      font-size: 10px;
+      text-transform: uppercase;
+    }
+  }
+
+  & .UserName {
+    font-size: 10px;
+  }
+}
