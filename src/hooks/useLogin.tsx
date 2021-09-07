@@ -3,22 +3,30 @@ import { useHistory } from "react-router-dom";
 
 import useStore from "../store/store";
 
-import handleLogin from "../helpers/handleLogin";
+import { setAuthHeader } from "../helpers/getAuthHeader";
+import getIdentity from "../helpers/getIdentity";
 
 import instance from "../axios/instance";
+
+import { ORG_NAME } from "../const";
 
 function useLogin() {
   const setIsAuthenticated = useStore((state) => state.setIsAuthenticated);
   const history = useHistory();
   const { mutateAsync: login, isLoading } = useMutation(
-    async (loginData: { password: string; email: string }) => {
-      const { data } = await instance.post("/auth", loginData);
+    async (password: string) => {
+      const { data } = await instance.post("/users/importCertificate", {
+        orgName: ORG_NAME,
+        x509Identity: JSON.parse(getIdentity() || ""),
+        password,
+      });
+
       return data;
     },
     {
       onSuccess: (data) => {
         setIsAuthenticated(true);
-        handleLogin(data?.payload?.["x-auth-token"]);
+        setAuthHeader(data?.payload?.jwtAuthToken);
         history.replace("/");
       },
     }

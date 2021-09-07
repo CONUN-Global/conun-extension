@@ -1,21 +1,18 @@
 import { useQuery } from "react-query";
 
-import useAppCurrentUser from "./useAppCurrentUser";
-
 import instance from "../axios/instance";
 
 import { FcnTypes, ORG_NAME } from "../const";
+import useCurrentUser from "./useCurrentUser";
 
-function useGetConTokenBalance() {
-  const { currentUser } = useAppCurrentUser();
-
-  const SMART_CONTRACT = "conos";
+function useGetConxBalance() {
+  const { currentUser } = useCurrentUser();
 
   const { data, isLoading, refetch, isFetching } = useQuery(
     "balance",
     async () => {
       const { data } = await instance.get(
-        `/con-token/channels/mychannel/chaincodes/${SMART_CONTRACT}?walletAddress=${currentUser?.walletAddress}&orgName=${ORG_NAME}&fcn=${FcnTypes.BalanceOf}`
+        `/con-token/channels/mychannel/chaincodes/${process.env.SMART_CONTRACT}?walletAddress=${currentUser?.walletAddress}&orgName=${ORG_NAME}&fcn=${FcnTypes.BalanceOf}`
       );
       return data;
     },
@@ -36,4 +33,4 @@ function useGetConTokenBalance() {
   };
 }
 
-export default useGetConTokenBalance;
+export default useGetConxBalance;

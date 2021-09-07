@@ -1,6 +1,6 @@
 import { useQuery } from "react-query";
 
-import useAppCurrentUser from "./useAppCurrentUser";
+import useCurrentUser from "./useCurrentUser";
 
 import instance from "../axios/instance";
 
@@ -45,7 +45,7 @@ async function getGasEstimate(
 }
 
 function useTransferFee({ to, token, amount }: UseTransferFeeProps) {
-  const { currentUser } = useAppCurrentUser();
+  const { currentUser } = useCurrentUser();
 
   const { data, isLoading } = useQuery(
     ["get-eth-gas-estimate", to, token, amount],

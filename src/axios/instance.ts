@@ -11,9 +11,9 @@ instance.interceptors.request.use(
     const token = await getAuthHeader();
 
     if (token) {
-      config.headers["x-auth-token"] = token;
+      config.headers.jwtAuthToken = token;
     } else {
-      delete instance.defaults.headers["x-auth-token"];
+      delete instance.defaults.headers.jwtAuthToken;
     }
     return config;
   },

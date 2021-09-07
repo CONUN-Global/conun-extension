@@ -4,7 +4,7 @@ import classNames from "classnames";
 
 import Button from "../Button";
 
-import useAppCurrentUser from "../../hooks/useAppCurrentUser";
+import useCurrentUser from "../../hooks/useCurrentUser";
 import useCurrentToken from "../../hooks/useCurrentToken";
 
 import Conun from "../../assets/icons/conun-white.svg";
@@ -29,7 +29,7 @@ interface TokenCardProps {
 }
 
 function TokenCard({ token, i }: TokenCardProps) {
-  const { currentUser } = useAppCurrentUser();
+  const { currentUser } = useCurrentUser();
   const currentToken = useCurrentToken();
   const { balance, refetch } = token?.useBalance();
 

@@ -16,6 +16,7 @@ import "pure-react-carousel/dist/react-carousel.es.css";
 
 function HomeWrapper() {
   const setSettings = useStore((state) => state.setSettings);
+
   return (
     <CarouselProvider
       className={styles.Carousel}

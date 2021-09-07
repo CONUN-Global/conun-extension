@@ -1,18 +1,18 @@
 import { useQuery } from "react-query";
-import instance from "../axios/instance";
 
-import useAppCurrentUser from "./useAppCurrentUser";
+import web3 from "../web3";
+
+import useCurrentUser from "./useCurrentUser";
 
 function useGetEthBalance() {
-  const { currentUser } = useAppCurrentUser();
+  const { currentUser } = useCurrentUser();
 
   const { data, isLoading, refetch, isFetching } = useQuery(
     "get-eth-balance",
     async () => {
-      const { data } = await instance(
-        `/ether/getBalanceOfEth?walletAddress=${currentUser?.walletAddress}`
-      );
-      return data;
+      const wei = await web3.eth.getBalance(currentUser?.walletAddress);
+      const balance = web3.utils.fromWei(wei, "ether");
+      return { payload: balance };
     },
     {
       enabled: !!currentUser?.walletAddress,

@@ -1,5 +1,5 @@
 import useGetConBalance from "../hooks/useGetConBalance";
-import useGetConTokenBalance from "../hooks/useGetConTokenBalance";
+import useGetConxBalance from "../hooks/useGetConxBalance";
 import useGetEthBalance from "../hooks/useGetEthBalance";
 
 export const AUTH_TOKEN = "conun-auth-token";
@@ -12,7 +12,7 @@ export const WALLET_PRIVATE_KEY_TOKEN = "conun-wallet-private-key";
 
 export const WALLET_ADDRESS_TOKEN = "conun-wallet-address";
 
-export const API_URL_TOKEN = "conun-api-url";
+export const METACON_PRIVATE = "metacon-private";
 
 export const KEY_STORE_TOKEN = "conun-key-store";
 
@@ -36,7 +36,7 @@ export const FcnTypes = {
 export const TOKEN_CARDS = [
   {
     token: "conx",
-    useBalance: useGetConTokenBalance,
+    useBalance: useGetConxBalance,
     useGasEstimate: () => ({ data: null, loading: false }),
   },
   {

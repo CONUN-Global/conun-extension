@@ -1,18 +1,26 @@
 import { useQuery } from "react-query";
-import instance from "../axios/instance";
+import web3 from "../web3";
 
-import useAppCurrentUser from "./useAppCurrentUser";
+import useCurrentUser from "./useCurrentUser";
 
 function useGetConBalance() {
-  const { currentUser } = useAppCurrentUser();
+  const { currentUser } = useCurrentUser();
 
   const { data, isLoading, refetch, isFetching } = useQuery(
     "get-con-balance",
     async () => {
-      const { data } = await instance.get(
-        `/ether/getBalanceOfCon?walletAddress=${currentUser?.walletAddress}`
+      const contract = new web3.eth.Contract(
+        JSON.parse(process.env.ABI || ""),
+        process.env.CONTRACT_ADDRESS
       );
-      return data;
+
+      const data = await contract.methods
+        .balanceOf(currentUser?.walletAddress)
+        .call();
+
+      const balance = await web3.utils.fromWei(data);
+
+      return { payload: balance };
     },
     {
       enabled: !!currentUser?.walletAddress,

@@ -6,7 +6,6 @@ import RecentTransactions from "./RecentTransactions";
 import Spinner from "../Spinner";
 
 import useCurrentUser from "../../hooks/useCurrentUser";
-import useAppCurrentUser from "../../hooks/useAppCurrentUser";
 import useStore from "../../store/store";
 
 import * as styles from "./Layout.module.scss";
@@ -19,11 +18,10 @@ function Layout({ children }: LayoutProps) {
   const isAuthenticated = useStore((state) => state.isAuthenticated);
 
   const { isLoading } = useCurrentUser();
-  const { isLoading: appUserLoading } = useAppCurrentUser();
 
   return (
     <>
-      {isLoading || appUserLoading ? (
+      {isLoading ? (
         <div className={styles.SpinnerContainer}>
           <Spinner />
         </div>

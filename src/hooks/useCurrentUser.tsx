@@ -1,32 +1,31 @@
-// import { useQuery } from "react-query";
+import { useQuery } from "react-query";
 
-// const getProfile = async () => {
-//   const user = await api.getProfile();
+import useStore from "../store/store";
 
-//   return user;
-// };
+import instance from "../axios/instance";
 
-// type CurrentUser = {
-//   name: string;
-//   email: string;
-//   picture: string;
-//   givenName: string;
-// };
+import getAuthHeader from "../helpers/getAuthHeader";
 
 function useCurrentUser() {
-  // const { data, isLoading } = useQuery("current-user", getProfile);
-
-  // const currentUser: CurrentUser =
-  //   { ...data, givenName: data?.given_name } || null;
+  const setIsUserLoggedIn = useStore((state) => state.setIsAuthenticated);
+  const { data, isLoading, isError } = useQuery(
+    "current-user",
+    async () => {
+      const { data } = await instance.get("/users/me");
+      return data;
+    },
+    {
+      enabled: !!getAuthHeader(),
+      onSuccess: () => {
+        setIsUserLoggedIn(true);
+      },
+    }
+  );
 
   return {
-    currentUser: {
-      name: "Ivan Saldano",
-      email: "ivanms1@gmail.com",
-      picture: "https://i.pravatar.cc/300",
-      givenName: "Ivan",
-    },
-    isLoading: false,
+    currentUser: data?.payload,
+    isLoading,
+    isError,
   };
 }
 
